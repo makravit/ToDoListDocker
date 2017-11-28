@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  todolist.api:
+    image: todolist.api
+    build:
+      context: ./ToDoList.Api
+      dockerfile: Dockerfile
+
+  todolist.web:
+    image: todolist.web
+    build:
+      context: ./ToDoList.Web
+      dockerfile: Dockerfile
