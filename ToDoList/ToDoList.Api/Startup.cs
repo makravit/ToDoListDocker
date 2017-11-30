@@ -32,7 +32,9 @@ namespace ToDoList.Api
             });
 
             services.AddDbContext<ToDoListContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("ToDoListContext")));
+                options.UseSqlServer(Configuration.GetConnectionString("ToDoListContext"),
+                sqlOptions => sqlOptions.EnableRetryOnFailure())
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
