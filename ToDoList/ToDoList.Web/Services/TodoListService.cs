@@ -20,7 +20,7 @@ namespace ToDoList.Web.Services
         {
             _httpClient = new HttpClient
             {
-                BaseAddress = new Uri("http://todolist.api/")
+                BaseAddress = new Uri("http://todolist.api:8080/")
             };
 
             _httpClient.DefaultRequestHeaders.Accept.Clear();

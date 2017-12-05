@@ -2,13 +2,15 @@ version: '3'
 
 services:
   todolist.api:
+    image: netbairesregistry.azurecr.io/todolistapi
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_ENVIRONMENT=Production
     ports:
       - "8080:80"
   todolist.web:
+    image: netbairesregistry.azurecr.io/todolistweb
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_ENVIRONMENT=Production
     ports:
       - "80:80"
 networks:
