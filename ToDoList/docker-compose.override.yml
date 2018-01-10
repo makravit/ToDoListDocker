@@ -4,6 +4,7 @@ services:
   todolist.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionString=${TODO_LIST_API_DB}
     ports:
       - "8080:80"
   todolist.web:

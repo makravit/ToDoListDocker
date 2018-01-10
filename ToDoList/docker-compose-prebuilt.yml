@@ -2,13 +2,14 @@ version: '3'
 
 services:
   todolist.api:
-    image: netbairesregistry.azurecr.io/todolistapi
+    image: glsfdemo.azurecr.io/todolistapi
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionString=${TODO_LIST_API_DB}
     ports:
       - "8080:80"
   todolist.web:
-    image: netbairesregistry.azurecr.io/todolistweb
+    image: glsfdemo.azurecr.io/todolistweb
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
     ports:
@@ -17,4 +18,3 @@ networks:
   default:
     external:
       name: nat
-
